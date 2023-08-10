@@ -32,4 +32,23 @@ public class FilterController {
 
         return ResponseEntity.ok(filteredData);
     }
+
+//    @PostMapping("/datafilter")
+//    public ResponseEntity<List<FilterRequestDTO>> filterData2(@RequestBody FilterRequestDTO filterRequestDTO) {
+//        Specification<Filter> filterSpecification = FilterSpecification.buildFilterSpecification(
+//                filterRequestDTO.getFieldName(),
+//                filterRequestDTO.getOperator(),
+//                filterRequestDTO.getKeyword()
+//        );
+//
+//        List<FilterRequestDTO> filteredDTOs = filterService.filterData2(filterSpecification);
+//
+//        return ResponseEntity.ok(filteredDTOs);
+//    }
+
+    @PostMapping("/datafilter")
+    public ResponseEntity<List<FilterRequestDTO>> filterData2(@RequestBody FilterRequestDTO filterRequestDTO) {
+        List<FilterRequestDTO> filteredDTOs = filterService.filterData2(filterRequestDTO);
+        return ResponseEntity.ok(filteredDTOs);
+    }
 }
